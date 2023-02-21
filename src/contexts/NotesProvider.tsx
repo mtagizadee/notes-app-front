@@ -9,6 +9,7 @@ interface INotesProviderProps {
 export type TNotesContext = {
   deleteFromNotes: (id: number) => void;
   updateInNotes: (id: number, updatedNote: INote) => void;
+  addToNotes: (note: INote) => void;
 };
 
 export const NotesContext = createContext<TNotesContext>({} as any);
@@ -24,8 +25,14 @@ const NotesProvider: FC<INotesProviderProps> = ({ children, setNotes }) => {
     );
   };
 
+  const addToNotes = (note: INote) => {
+    setNotes((prev: INote[]) => [...prev, note]);
+  };
+
   return (
-    <NotesContext.Provider value={{ deleteFromNotes, updateInNotes }}>
+    <NotesContext.Provider
+      value={{ deleteFromNotes, updateInNotes, addToNotes }}
+    >
       {children}
     </NotesContext.Provider>
   );

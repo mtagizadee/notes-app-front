@@ -20,7 +20,7 @@ const Note: FC<INoteProps> = ({ note }) => {
   return (
     <>
       <Box className="w-full relative">
-        <div className="absolute center-row gap-1 right-3 top-2">
+        <div className="absolute center-row gap-3 right-3 top-2">
           <FiEdit2 className="cursor-pointer" />
           <FiTrash2
             onClick={() => setWarningModal(true)}
