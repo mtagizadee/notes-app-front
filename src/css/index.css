@@ -1,0 +1,125 @@
+@import url(./_fonts.css);
+@import url(./_loader.css);
+@import url(./_animations.css);
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+@layer base {
+  body {
+    @apply bg-white dark:bg-gray-900 text-gray-700 dark:text-gray-400 font-inter;
+  }
+
+  h1,
+  h2,
+  h3 {
+    @apply font-bold text-gray-900 dark:text-gray-100;
+  }
+
+  h1 {
+    @apply text-3xl;
+  }
+
+  h2 {
+    @apply text-2xl;
+  }
+
+  h3 {
+    @apply text-xl;
+  }
+
+  input {
+    @apply bg-gray-50 border outline-none focus:shadow-md border-gray-300 text-gray-900 text-sm rounded-lg block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white;
+  }
+
+  label {
+    @apply block mb-2 text-sm font-medium text-gray-900 dark:text-white;
+  }
+}
+
+@layer components {
+  .menu-item-box {
+    @apply cursor-pointer w-full flex items-center justify-center text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 rounded-lg text-sm p-2.5;
+  }
+
+  .red-button {
+    @apply text-white bg-red-600 hover:bg-red-800 focus:ring-4 focus:outline-none focus:ring-red-300 dark:focus:ring-red-800 font-medium text-sm;
+  }
+
+  .dark-button {
+    @apply bg-white border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-200 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-gray-900;
+  }
+
+  .lds-ripple {
+    @apply border-gray-700 dark:border-white;
+  }
+
+  .card-header-footer {
+    @apply bg-red-500 dark:bg-gray-700 min-h-[35px];
+  }
+
+  .live {
+    @apply text-4xl;
+  }
+}
+
+@layer utilities {
+  .center-col {
+    @apply flex flex-col items-center;
+  }
+
+  .center-row {
+    @apply flex items-center;
+  }
+
+  .center-content {
+    @apply flex items-center justify-center;
+  }
+
+  .full-screen {
+    @apply w-full h-screen;
+  }
+
+  .box-800 {
+    @apply w-screen max-w-[800px];
+  }
+
+  .box-700 {
+    @apply w-screen max-w-[700px];
+  }
+
+  .box-600 {
+    @apply w-screen max-w-[600px];
+  }
+
+  .box-500 {
+    @apply w-screen max-w-[500px];
+  }
+
+  .box-400 {
+    @apply w-screen max-w-[400px];
+  }
+
+  .box-300 {
+    @apply w-screen max-w-[300px];
+  }
+
+  .box-200 {
+    @apply w-screen max-w-[200px];
+  }
+
+  .box-100 {
+    @apply w-screen max-w-[100px];
+  }
+}

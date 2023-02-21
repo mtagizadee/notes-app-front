@@ -1,0 +1,13 @@
+.pop-up {
+  animation: pop-up-animation 0.2s ease-in-out forwards;
+}
+
+@keyframes pop-up-animation {
+  from {
+    margin-bottom: -50%;
+  }
+
+  to {
+    margin: 0;
+  }
+}
