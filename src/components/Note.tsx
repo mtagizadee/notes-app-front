@@ -7,6 +7,7 @@ import { deleteNote } from "../api/deleteNote";
 import { NotesContext } from "../contexts/NotesProvider";
 import usePopup from "../hooks/usePopup";
 import { PopupType } from "./ui/Popup";
+import UpdateNoteModal from "./UpdateNoteModal";
 
 interface INoteProps {
   note: INote;
@@ -16,12 +17,16 @@ const Note: FC<INoteProps> = ({ note }) => {
   const [warningModal, setWarningModal] = useState<boolean>(false);
   const { deleteFromNotes, updateInNotes } = useContext(NotesContext);
   const { displayPopup } = usePopup();
+  const [updateModal, setUpdateModal] = useState<boolean>(false);
 
   return (
     <>
       <Box className="w-full relative">
         <div className="absolute center-row gap-3 right-3 top-2">
-          <FiEdit2 className="cursor-pointer" />
+          <FiEdit2
+            onClick={() => setUpdateModal(true)}
+            className="cursor-pointer"
+          />
           <FiTrash2
             onClick={() => setWarningModal(true)}
             className="cursor-pointer"
@@ -46,6 +51,11 @@ const Note: FC<INoteProps> = ({ note }) => {
       >
         Are you sure you want to delete this note?
       </WarningModal>
+      <UpdateNoteModal
+        onClose={() => setUpdateModal(false)}
+        visible={updateModal}
+        id={note.id as number}
+      />
     </>
   );
 };
