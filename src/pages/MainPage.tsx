@@ -1,7 +1,10 @@
+import Note from "../components/Note";
+import NotesList from "../components/NotesList";
+
 const MainPage = () => {
   return (
-    <div className="w-full h-screen flex items-center justify-center">
-      Working
+    <div className="center-col pt-24">
+      <NotesList />
     </div>
   );
 };

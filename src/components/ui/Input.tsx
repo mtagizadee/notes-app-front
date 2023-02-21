@@ -37,9 +37,14 @@ const Input: FC<IInputProps> = ({
 }) => {
   return (
     <div className={className}>
-      <label className={error ? "text-red-700 dark:text-red-500" : ""} htmlFor={id || name}>
-        {label}
-      </label>
+      {label ? (
+        <label
+          className={error ? "text-red-700 dark:text-red-500" : ""}
+          htmlFor={id || name}
+        >
+          {label}
+        </label>
+      ) : null}
       <input
         className={
           error
