@@ -24,7 +24,7 @@ const useNotes = () => {
     getNotes();
   }, []);
 
-  return { notes, isLoading, error, refetch: getNotes };
+  return { notes, isLoading, error, refetch: getNotes, setNotes };
 };
 
 export default useNotes;
